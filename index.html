@@ -60,6 +60,13 @@
   .folio.is-warm .folio__dot span b { color: #1b1409; }
   .folio.is-warm .folio__dot span { color: #3b2a12; }
   .folio.is-warm .folio__cta { color: #1b1409; }
+  /* низкие окна на компьютере: вертикальная кнопка «Рассчитать смету» целиком в окне, линия этапов сдвинута ниже */
+  @media (min-width: 861px) and (max-height: 760px) {
+    .folio { top: 56%; height: min(28vh, 22rem); }
+  }
+  @media (min-width: 861px) and (max-height: 430px) {
+    .folio__cta { display: none; }
+  }
   .folio-m { display: none; }
   @media (max-width: 860px) {
     .folio { display: none; }
@@ -376,6 +383,22 @@
     .toc a:hover img { opacity: .92; }
     .folio__cta:hover { text-decoration: underline; text-underline-offset: .2em; }
   }
+  /* низкие окна на компьютере: заголовок первого экрана ниже ростом, чтобы цена и подпись не уходили за нижний край */
+  @media (min-width: 861px) and (max-height: 760px) {
+    .title__body h1 { font-size: clamp(2rem, min(1rem + 4.6vw, 8vh), 5.4rem); }
+    .title__body .v-lede { margin-top: var(--v-3); }
+    .title__body .v-label { margin-bottom: var(--v-3); }
+    .title__body .v-lede { font-size: 1rem; max-width: 52ch; }
+    .title__cta { margin-top: var(--v-3); gap: var(--v-3); }
+    .title__price span { display: none; }
+  }
+  @media (min-width: 861px) and (max-height: 520px) {
+    .title__body .v-lede { display: none; }
+  }
+  /* плашка с ценой не заходит на дом: на компьютере она уже трети экрана */
+  @media (min-width: 861px) { .title__price { max-width: 15.5rem; padding: .7rem .9rem; } .title__price span { display: none; } }
+  @media (min-width: 861px) and (max-height: 520px) { .title__price { font-size: .78rem; padding: .45rem .7rem; } }
+  @media (min-width: 861px) and (max-height: 760px) { .title__price { font-size: .85rem; line-height: 1.35; } }
 </style>
 </head>
 <body>
