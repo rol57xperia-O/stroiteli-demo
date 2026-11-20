@@ -215,7 +215,7 @@
   .spread__fig .fig { position: relative; overflow: hidden; aspect-ratio: 16 / 11; background: var(--v-surface); border-radius: var(--v-radius); }
   .spread__fig .fig > div { position: absolute; left: 0; right: 0; top: -36px; bottom: -36px; will-change: transform; }
   .spread__fig .fig img { width: 100%; height: 100%; object-fit: cover; }
-  .spread__fig figcaption { display: grid; grid-template-columns: auto 1fr; gap: var(--v-3); padding-top: var(--v-3); font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 52ch; }
+  .spread__fig figcaption { display: grid; grid-template-columns: auto 1fr; gap: var(--v-3); padding-top: var(--v-3); font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 42ch; }
   .spread__fig figcaption b { font-family: var(--v-font-display); font-weight: 600; color: var(--v-accent); font-variant-numeric: tabular-nums; }
   .spread__copy { padding-top: var(--v-2); }
   .spread__copy .v-label { display: block; margin-bottom: var(--v-3); }
@@ -399,6 +399,12 @@
   @media (min-width: 861px) { .title__price { max-width: 15.5rem; padding: .7rem .9rem; } .title__price span { display: none; } }
   @media (min-width: 861px) and (max-height: 520px) { .title__price { font-size: .78rem; padding: .45rem .7rem; } }
   @media (min-width: 861px) and (max-height: 760px) { .title__price { font-size: .85rem; line-height: 1.35; } }
+  /* дом на первом экране выше: показываем нижнюю часть кадра, а не верхнюю */
+  @media (min-width: 861px) { .v-page .cover__img { object-position: 62% 100%; } }
+  /* подзаголовок уже, чтобы не заходил на крышу дома */
+  @media (min-width: 861px) { .title__body .v-lede { max-width: 33ch; } }
+  @media (min-width: 861px) and (max-height: 760px) { .title__body .v-lede { font-size: .92rem; max-width: 34ch; } }
+  @media (min-width: 861px) and (max-height: 600px) { .title__body .v-label { display: none; } }
 </style>
 </head>
 <body>
